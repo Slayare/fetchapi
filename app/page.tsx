@@ -172,7 +172,7 @@ export default function OfficePetDashboard() {
       {/* Footer */}
       <footer className="mt-6 text-center">
         <p className="text-xs text-muted-foreground">
-          Biscuit has been the office pet since 2024. Be kind, keep them happy!
+          Biscuit has been the office pet since 2026. Be kind, keep them happy!
         </p>
       </footer>
     </div>
