@@ -82,10 +82,10 @@ function drawRoom(ctx: CanvasRenderingContext2D, w: number, h: number) {
   ctx.fillRect(0, h * 0.65 - 6, w, 6)
 
   // Window
-  const winX = w * 0.65
+  const winX = w * 0.68
   const winY = h * 0.08
-  const winW = 80
-  const winH = 70
+  const winW = 65
+  const winH = 75
   ctx.fillStyle = "#bde0fe"
   ctx.fillRect(winX, winY, winW, winH)
   ctx.strokeStyle = "#f5f0e8"
@@ -109,24 +109,24 @@ function drawRoom(ctx: CanvasRenderingContext2D, w: number, h: number) {
   ctx.fill()
 
   // Small plant on floor
-  const plantX = w * 0.82
+  const plantX = w * 0.84
   const plantY = h * 0.65 - 6
   // Pot
   ctx.fillStyle = "#d4886b"
-  ctx.fillRect(plantX - 8, plantY - 16, 16, 16)
+  ctx.fillRect(plantX - 6, plantY - 14, 12, 14)
   ctx.fillStyle = "#c27856"
-  ctx.fillRect(plantX - 10, plantY - 18, 20, 4)
+  ctx.fillRect(plantX - 7, plantY - 16, 14, 4)
   // Leaves
   ctx.fillStyle = "#7cb97c"
   ctx.beginPath()
-  ctx.ellipse(plantX, plantY - 28, 8, 12, 0, 0, Math.PI * 2)
+  ctx.ellipse(plantX, plantY - 26, 6, 14, 0, 0, Math.PI * 2)
   ctx.fill()
   ctx.fillStyle = "#6aaa6a"
   ctx.beginPath()
-  ctx.ellipse(plantX - 6, plantY - 24, 6, 10, -0.4, 0, Math.PI * 2)
+  ctx.ellipse(plantX - 4, plantY - 22, 5, 10, -0.3, 0, Math.PI * 2)
   ctx.fill()
   ctx.beginPath()
-  ctx.ellipse(plantX + 6, plantY - 24, 6, 10, 0.4, 0, Math.PI * 2)
+  ctx.ellipse(plantX + 4, plantY - 22, 5, 10, 0.3, 0, Math.PI * 2)
   ctx.fill()
 
   // Dog bed
@@ -134,11 +134,11 @@ function drawRoom(ctx: CanvasRenderingContext2D, w: number, h: number) {
   const bedY = h * 0.65 + 12
   ctx.fillStyle = "#e8b4c8"
   ctx.beginPath()
-  ctx.ellipse(bedX + 28, bedY + 8, 32, 10, 0, 0, Math.PI * 2)
+  ctx.ellipse(bedX + 22, bedY + 8, 26, 12, 0, 0, Math.PI * 2)
   ctx.fill()
   ctx.fillStyle = "#d99ab5"
   ctx.beginPath()
-  ctx.ellipse(bedX + 28, bedY + 8, 24, 7, 0, 0, Math.PI * 2)
+  ctx.ellipse(bedX + 22, bedY + 8, 20, 8, 0, 0, Math.PI * 2)
   ctx.fill()
 
   // Food bowl
@@ -146,17 +146,17 @@ function drawRoom(ctx: CanvasRenderingContext2D, w: number, h: number) {
   const bowlY = h * 0.65 + 24
   ctx.fillStyle = "#88c9e8"
   ctx.beginPath()
-  ctx.ellipse(bowlX, bowlY, 14, 6, 0, 0, Math.PI * 2)
+  ctx.ellipse(bowlX, bowlY, 12, 7, 0, 0, Math.PI * 2)
   ctx.fill()
   ctx.fillStyle = "#70b8d9"
   ctx.beginPath()
-  ctx.ellipse(bowlX, bowlY, 10, 4, 0, 0, Math.PI * 2)
+  ctx.ellipse(bowlX, bowlY, 9, 5, 0, 0, Math.PI * 2)
   ctx.fill()
   // Kibble
   ctx.fillStyle = "#c9a96e"
-  ctx.fillRect(bowlX - 4, bowlY - 3, 3, 3)
-  ctx.fillRect(bowlX + 1, bowlY - 2, 3, 3)
-  ctx.fillRect(bowlX - 1, bowlY - 4, 3, 3)
+  ctx.fillRect(bowlX - 3, bowlY - 3, 2, 2)
+  ctx.fillRect(bowlX + 1, bowlY - 2, 2, 2)
+  ctx.fillRect(bowlX - 1, bowlY - 4, 2, 2)
 }
 
 function drawDog(
@@ -178,42 +178,42 @@ function drawDog(
   // Shadow
   ctx.fillStyle = "rgba(0,0,0,0.08)"
   ctx.beginPath()
-  ctx.ellipse(centerX, groundY + 2, 22, 5, 0, 0, Math.PI * 2)
+  ctx.ellipse(centerX, groundY + 2, 15, 5, 0, 0, Math.PI * 2)
   ctx.fill()
 
   // Body
   ctx.fillStyle = "#f5d6a0"
-  ctx.fillRect(x - 16, y - 20, 32, 20)
+  ctx.fillRect(x - 10, y - 20, 20, 18)
 
   // Body spots
   ctx.fillStyle = "#e8c088"
-  ctx.fillRect(x - 8, y - 18, 8, 6)
-  ctx.fillRect(x + 4, y - 14, 6, 8)
+  ctx.fillRect(x - 5, y - 18, 5, 5)
+  ctx.fillRect(x + 1, y - 14, 4, 6)
 
   // Legs
   const legAnim = mood === "walking" ? Math.sin(frame * Math.PI / 2) * 3 : 0
   ctx.fillStyle = "#f5d6a0"
   // Front legs
-  ctx.fillRect(x - 12, y, 6, 10 + legAnim)
-  ctx.fillRect(x + 6, y, 6, 10 - legAnim)
+  ctx.fillRect(x - 7, y, 4, 10 + legAnim)
+  ctx.fillRect(x + 3, y, 4, 10 - legAnim)
   // Back paws
   ctx.fillStyle = "#e8c088"
-  ctx.fillRect(x - 12, y + 8 + legAnim, 6, 3)
-  ctx.fillRect(x + 6, y + 8 - legAnim, 6, 3)
+  ctx.fillRect(x - 7, y + 8 + legAnim, 4, 3)
+  ctx.fillRect(x + 3, y + 8 - legAnim, 4, 3)
 
   // Head
   ctx.fillStyle = "#f5d6a0"
-  ctx.fillRect(x - 12, y - 36, 24, 18)
+  ctx.fillRect(x - 8, y - 36, 16, 18)
 
   // Ears
   ctx.fillStyle = "#d4a670"
-  ctx.fillRect(x - 14, y - 42, 8, 10)
-  ctx.fillRect(x + 6, y - 42, 8, 10)
+  ctx.fillRect(x - 10, y - 42, 6, 10)
+  ctx.fillRect(x + 4, y - 42, 6, 10)
 
   // Inner ears
   ctx.fillStyle = "#e8b4c8"
-  ctx.fillRect(x - 12, y - 40, 4, 6)
-  ctx.fillRect(x + 8, y - 40, 4, 6)
+  ctx.fillRect(x - 8, y - 40, 3, 6)
+  ctx.fillRect(x + 5, y - 40, 3, 6)
 
   // Eyes
   if (mood === "sleeping") {
@@ -221,43 +221,43 @@ function drawDog(
     ctx.strokeStyle = "#5a4030"
     ctx.lineWidth = 2
     ctx.beginPath()
-    ctx.moveTo(x - 7, y - 28)
-    ctx.lineTo(x - 3, y - 28)
+    ctx.moveTo(x - 4, y - 28)
+    ctx.lineTo(x - 1, y - 28)
     ctx.stroke()
     ctx.beginPath()
-    ctx.moveTo(x + 3, y - 28)
-    ctx.lineTo(x + 7, y - 28)
+    ctx.moveTo(x + 1, y - 28)
+    ctx.lineTo(x + 4, y - 28)
     ctx.stroke()
 
     // Z's
     ctx.fillStyle = "#88c9e8"
     ctx.font = "bold 10px monospace"
     const zBounce = Math.sin(frame * Math.PI / 2) * 2
-    ctx.fillText("z", x + 16, y - 36 - zBounce)
+    ctx.fillText("z", x + 10, y - 36 - zBounce)
     ctx.font = "bold 8px monospace"
-    ctx.fillText("z", x + 22, y - 42 - zBounce)
+    ctx.fillText("z", x + 15, y - 42 - zBounce)
   } else {
     // Open eyes
     ctx.fillStyle = "#5a4030"
-    ctx.fillRect(x - 7, y - 30, 4, 4)
-    ctx.fillRect(x + 3, y - 30, 4, 4)
+    ctx.fillRect(x - 4, y - 30, 3, 3)
+    ctx.fillRect(x + 1, y - 30, 3, 3)
 
     // Eye shine
     ctx.fillStyle = "#ffffff"
-    ctx.fillRect(x - 6, y - 30, 2, 2)
-    ctx.fillRect(x + 4, y - 30, 2, 2)
+    ctx.fillRect(x - 3, y - 30, 1, 1)
+    ctx.fillRect(x + 2, y - 30, 1, 1)
 
     // Happy eyes (^_^)
     if (mood === "happy") {
       ctx.fillStyle = "#f5d6a0"
-      ctx.fillRect(x - 7, y - 30, 4, 2)
-      ctx.fillRect(x + 3, y - 30, 4, 2)
+      ctx.fillRect(x - 4, y - 30, 3, 2)
+      ctx.fillRect(x + 1, y - 30, 3, 2)
       ctx.fillStyle = "#5a4030"
       ctx.beginPath()
-      ctx.arc(x - 5, y - 28, 3, Math.PI, 0)
+      ctx.arc(x - 2.5, y - 28, 2, Math.PI, 0)
       ctx.stroke()
       ctx.beginPath()
-      ctx.arc(x + 5, y - 28, 3, Math.PI, 0)
+      ctx.arc(x + 2.5, y - 28, 2, Math.PI, 0)
       ctx.stroke()
     }
   }
@@ -270,17 +270,17 @@ function drawDog(
   if (mood === "eating") {
     // Open mouth
     ctx.fillStyle = "#d47070"
-    ctx.fillRect(x - 4, y - 20, 8, 4)
+    ctx.fillRect(x - 3, y - 20, 6, 4)
     // Food particle
     ctx.fillStyle = "#c9a96e"
     const foodBounce = frame % 2
-    ctx.fillRect(x - 6 + foodBounce * 3, y - 22 + foodBounce * 2, 3, 3)
+    ctx.fillRect(x - 4 + foodBounce * 2, y - 22 + foodBounce * 2, 2, 2)
   } else if (mood === "happy") {
     // Smile
     ctx.strokeStyle = "#5a4030"
     ctx.lineWidth = 1.5
     ctx.beginPath()
-    ctx.arc(x, y - 20, 4, 0, Math.PI)
+    ctx.arc(x, y - 20, 3, 0, Math.PI)
     ctx.stroke()
   }
 
@@ -288,26 +288,26 @@ function drawDog(
   const tailWag = Math.sin(frame * Math.PI / 1.5) * 8
   ctx.fillStyle = "#d4a670"
   ctx.save()
-  ctx.translate(x + 16, y - 16)
+  ctx.translate(x + 10, y - 16)
   ctx.rotate((-30 + tailWag) * Math.PI / 180)
-  ctx.fillRect(0, -3, 14, 5)
+  ctx.fillRect(0, -2, 10, 4)
   ctx.restore()
 
   // Blush marks when happy
   if (mood === "happy") {
     ctx.fillStyle = "rgba(232, 180, 200, 0.6)"
     ctx.beginPath()
-    ctx.ellipse(x - 10, y - 24, 4, 2, 0, 0, Math.PI * 2)
+    ctx.ellipse(x - 7, y - 24, 2.5, 2, 0, 0, Math.PI * 2)
     ctx.fill()
     ctx.beginPath()
-    ctx.ellipse(x + 10, y - 24, 4, 2, 0, 0, Math.PI * 2)
+    ctx.ellipse(x + 7, y - 24, 2.5, 2, 0, 0, Math.PI * 2)
     ctx.fill()
   }
 
   // Hearts when being pet
   if (mood === "happy" && frame % 2 === 0) {
-    drawHeart(ctx, x - 20, y - 48, 6, "#e8b4c8")
-    drawHeart(ctx, x + 18, y - 44, 4, "#fca5a5")
+    drawHeart(ctx, x - 14, y - 48, 5, "#e8b4c8")
+    drawHeart(ctx, x + 12, y - 44, 4, "#fca5a5")
   }
 }
 
