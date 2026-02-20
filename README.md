@@ -1,4 +1,4 @@
-# Fetch API
+![Fetch API Banner](media/biscuit-banner.png)
 
 A virtual pet dashboard where you and your colleagues take care of **Biscuit**, a pixel-art dog that lives in your office. Feed, pet, and walk Biscuit to keep their stats up while simulated coworkers chip in too.
 
